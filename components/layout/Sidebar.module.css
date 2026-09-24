@@ -1,0 +1,144 @@
+.card {
+  background: var(--bg-sidebar);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--text-dark);
+}
+
+/* Avatar */
+.avatarBlock {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: var(--bg-avatar);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avatarInitials {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: -0.04em;
+}
+
+/* Identity */
+.identity {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.tagline {
+  font-size: 0.75rem;
+  color: var(--text-dark-muted);
+  font-weight: 500;
+}
+
+/* Bio */
+.bio {
+  font-size: 0.78rem;
+  color: var(--text-dark-muted);
+  line-height: 1.6;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: var(--border-dark);
+}
+
+/* Links */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-dark-muted);
+  font-weight: 500;
+  transition: color 0.15s;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.link:hover {
+  color: var(--text-dark);
+}
+
+.link span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Resume button */
+.resumeBtn {
+  margin-top: 0.25rem;
+  justify-content: center;
+  color: var(--text-dark-muted) !important;
+  border-color: var(--border-dark) !important;
+  font-size: 0.75rem !important;
+}
+
+.resumeBtn:hover {
+  color: var(--text-dark) !important;
+  border-color: rgba(0, 0, 0, 0.2) !important;
+  background: rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Mobile: horizontal layout */
+@media (max-width: 860px) {
+  .card {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .avatarBlock {
+    width: 80px;
+    aspect-ratio: 1;
+  }
+
+  .identity,
+  .bio,
+  .divider,
+  .links,
+  .resumeBtn {
+    flex: 1 1 100%;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+}

@@ -1,0 +1,187 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: var(--nav-height);
+}
+
+.glow {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 600px;
+  background: radial-gradient(ellipse, rgba(59, 130, 246, 0.1) 0%, rgba(6, 182, 212, 0.04) 45%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.gridLines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, black 0%, transparent 80%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-xl);
+  max-width: 860px;
+  margin: 0 auto;
+  padding: var(--space-4xl) var(--space-xl);
+}
+
+.badge {
+  animation: fadeInDown 0.6s ease forwards;
+}
+
+.name {
+  animation: fadeInUp 0.7s ease 0.1s both;
+}
+
+.role {
+  font-size: clamp(var(--text-xl), 3vw, var(--text-3xl));
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  min-height: 2.5rem;
+  animation: fadeInUp 0.7s ease 0.2s both;
+}
+
+.pitch {
+  font-size: clamp(var(--text-base), 2vw, var(--text-lg));
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  line-height: 1.7;
+  animation: fadeInUp 0.7s ease 0.3s both;
+}
+
+.pitch strong {
+  color: var(--color-text);
+}
+
+.ctas {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeInUp 0.7s ease 0.4s both;
+}
+
+.socials {
+  display: flex;
+  gap: var(--space-lg);
+  animation: fadeInUp 0.7s ease 0.5s both;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-base);
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.socialLink:hover {
+  color: var(--color-text);
+  border-color: var(--color-primary);
+  background: rgba(124,58,237,0.08);
+}
+
+/* Metrics bar */
+.metrics {
+  display: flex;
+  gap: var(--space-2xl);
+  padding: var(--space-xl) var(--space-2xl);
+  border-radius: var(--radius-xl);
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--color-border);
+  animation: fadeInUp 0.7s ease 0.6s both;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.metricItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.metricValue {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  background: var(--gradient-blue-cyan);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.metricLabel {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Scroll indicator */
+.scrollIndicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.scrollIndicator span {
+  display: block;
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--color-primary), transparent);
+  border-radius: var(--radius-full);
+  margin: 0 auto;
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { opacity: 0.3; transform: scaleY(0.7); }
+  50% { opacity: 1; transform: scaleY(1); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .metrics { gap: var(--space-xl); padding: var(--space-lg); }
+  .ctas { flex-direction: column; align-items: center; }
+}
