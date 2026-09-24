@@ -43,7 +43,7 @@ export const experience: ExperienceEntry[] = [
     company: "OtherwiseAI",
     companyUrl: "https://otherwiseai.com",
     role: "Software Engineer",
-    period: "Jun 2024 – Jul 2025 · 1 year",
+    period: "Jun 2024 – Jul 2025 · 1 year 2 months",
     location: "Bengaluru, Karnataka",
     type: "full-time",
     description:
